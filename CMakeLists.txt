@@ -19,5 +19,6 @@ add_executable(SimpleTurnBasedBattle
 
 target_include_directories(SimpleTurnBasedBattle
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        #block_of "Entities.hpp"
+        ${CMAKE_SOURCE_DIR}/src/entities
 )
