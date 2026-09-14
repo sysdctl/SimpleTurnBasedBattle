@@ -15,7 +15,7 @@ class Player : public Character
 
                 
 
-                void attack (Character& target)
+                void attack (Character& target) override
                 {
                         target.takeDamage(handAttack);
                 }

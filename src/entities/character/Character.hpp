@@ -44,4 +44,6 @@ class Character
                         health -= damage;
                         if (health < 0){ health = 0; }
                 }
+
+                virtual void attack (Character& target) = 0;
 };

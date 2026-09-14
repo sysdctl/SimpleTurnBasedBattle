@@ -1,5 +1,6 @@
 
 #include "Entities.hpp"
+#include "Battle.hpp"
 
 #include <iostream>
 
@@ -9,10 +10,20 @@ int main ()
         Enemy enemy("Zombie", 30);
 
         std::cout << player.getName() << " HP : " << player.getHealth() <<'\n';
-        std::cout << enemy.getName() << " HP : " << enemy.getHealth() <<'\n';
+        std::cout << enemy.getName() << " HP : " << enemy.getHealth() <<'\n'<<'\n';
 
-        player.attack(enemy);
+
+        Battle battle;
+        battle.fight(player, enemy);
+
 
         std::cout <<'\n';
-        std::cout << enemy.getName() << " HP : " << enemy.getHealth() <<'\n';
+        if (player.isAlive())
+        {
+                std::cout << player.getName() << " won";
+        }
+        else
+        {
+                std::cout << enemy.getName() << " won";
+        }
 }
