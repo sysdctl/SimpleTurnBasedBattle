@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Entities.hpp";
-#include "Combat.hpp";
+#include "Entities.hpp"
+#include "Combat.hpp"
 #include <memory>
 
 class CharacterFactory

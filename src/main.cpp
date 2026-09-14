@@ -2,7 +2,7 @@
 #include "Entities.hpp"
 #include "Battle.hpp"
 #include "Combat.hpp"
-#include "CharacterFactory.hpp";
+#include "CharacterFactory.hpp"
 
 #include <iostream>
 #include <memory>
