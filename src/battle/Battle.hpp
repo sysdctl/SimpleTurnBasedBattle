@@ -13,7 +13,7 @@ class Battle
                 {
                         while (charOne.isAlive() && charTwo.isAlive())
                         {
-                                if (charOne.getHealth() < 5) {charOne.setAttackStrategy(std::make_unique<SwordAttack>());}
+                                if (charOne.getHealth() < 5) {charOne.setAttackStrategy(std::make_unique<SwordAttack>()); std::cout<< "Changed to Sword" <<'\n';}
                                 charOne.attack(charTwo);
                                 std::cout << charOne.getName() << " attacks "<< charTwo.getName() << '\n';
                                 std::cout << charTwo.getName() << " HP: " << charTwo.getHealth() << '\n' << '\n';

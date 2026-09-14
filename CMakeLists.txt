@@ -34,5 +34,7 @@ target_include_directories(SimpleTurnBasedBattle
 
         #block_of "CharacterFactory.hpp"
         ${CMAKE_SOURCE_DIR}/src/factory
-        #interface ---------------
+        #assets 
+                #"EnemyType.hpp"
+        ${CMAKE_SOURCE_DIR}/src/factory
 )

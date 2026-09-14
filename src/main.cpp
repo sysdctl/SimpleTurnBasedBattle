@@ -3,6 +3,7 @@
 #include "Battle.hpp"
 #include "Combat.hpp"
 #include "CharacterFactory.hpp"
+#include "EnemyType.hpp"
 
 #include <iostream>
 #include <memory>
@@ -10,7 +11,7 @@
 int main ()
 {
         auto player = CharacterFactory::createPlayer();
-        auto enemy = CharacterFactory::createEnemy();
+        auto enemy = CharacterFactory::createEnemy(EnemyType::Archer);
 
         std::cout << player->getName() << " HP : " << player->getHealth() <<'\n';
         std::cout << enemy->getName() << " HP : " << enemy->getHealth() <<'\n'<<'\n';
