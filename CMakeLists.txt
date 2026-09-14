@@ -10,8 +10,6 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF) # increasing build speed
 
 #=============== blocks and links ===============#
 
-#block_of "Entities.hpp"
-#block_of "Battle.hpp"
 add_executable(SimpleTurnBasedBattle
     src/main.cpp
 )
@@ -22,6 +20,15 @@ target_include_directories(SimpleTurnBasedBattle
     PRIVATE
         #block_of "Entities.hpp"
         ${CMAKE_SOURCE_DIR}/src/entities
+        #interface "Character.hpp"
+        ${CMAKE_SOURCE_DIR}/src/entities/character
+
         #block_of "Battle.hpp"
         ${CMAKE_SOURCE_DIR}/src/battle
+        #interface ---------------
+
+        #block_of "Combat.hpp"
+        ${CMAKE_SOURCE_DIR}/src/combat
+        #interface "AttackStrategy.hpp"
+        ${CMAKE_SOURCE_DIR}/src/combat/strategy
 )

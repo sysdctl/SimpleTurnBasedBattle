@@ -1,13 +1,15 @@
 
 #include "Entities.hpp"
 #include "Battle.hpp"
+#include "Combat.hpp"
 
 #include <iostream>
+#include <memory>
 
 int main ()
 {
-        Player player("hamed", 10);
-        Enemy enemy("Zombie", 30);
+        Player player("hamed", 10, std::make_unique<HandAttack>());
+        Enemy enemy("Zombie", 20, std::make_unique<HandAttack>());
 
         std::cout << player.getName() << " HP : " << player.getHealth() <<'\n';
         std::cout << enemy.getName() << " HP : " << enemy.getHealth() <<'\n'<<'\n';

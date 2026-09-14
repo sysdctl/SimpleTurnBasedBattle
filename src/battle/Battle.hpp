@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Entities.hpp"
-
 #include <iostream>
+
+#include "Combat.hpp"
+#include <memory>
 
 class Battle
 {
@@ -11,6 +13,7 @@ class Battle
                 {
                         while (charOne.isAlive() && charTwo.isAlive())
                         {
+                                if (charOne.getHealth() < 5) {charOne.setAttackStrategy(std::make_unique<SwordAttack>());}
                                 charOne.attack(charTwo);
                                 std::cout << charOne.getName() << " attacks "<< charTwo.getName() << '\n';
                                 std::cout << charTwo.getName() << " HP: " << charTwo.getHealth() << '\n' << '\n';
