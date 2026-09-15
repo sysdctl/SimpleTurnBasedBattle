@@ -42,4 +42,12 @@ target_include_directories(SimpleTurnBasedBattle
         ${CMAKE_SOURCE_DIR}/src/logging
         #interface "Logger.hpp"
         ${CMAKE_SOURCE_DIR}/src/logging/logger
+
+        #block_of ---------------
+        #${CMAKE_SOURCE_DIR}/src/command
+        #interface "Command.hpp"
+        ${CMAKE_SOURCE_DIR}/src/command
+        #assets
+                #"AttackCommand.hpp"
+                ${CMAKE_SOURCE_DIR}/src/command
 )
