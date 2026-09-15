@@ -4,8 +4,8 @@
 #include "Combat.hpp"
 #include "CharacterFactory.hpp"
 #include "EnemyType.hpp"
+#include "Logging.hpp"
 
-#include <iostream>
 #include <memory>
 
 int main ()
@@ -13,21 +13,22 @@ int main ()
         auto player = CharacterFactory::createPlayer();
         auto enemy = CharacterFactory::createEnemy(EnemyType::Archer);
 
-        std::cout << player->getName() << " HP : " << player->getHealth() <<'\n';
-        std::cout << enemy->getName() << " HP : " << enemy->getHealth() <<'\n'<<'\n';
+        ConsoleLogger logger;
+        logger.logf(player->getName(), " HP : ", player->getHealth());
+        logger.logf(enemy->getName(), " HP : ", enemy->getHealth(), '\n');
 
 
-        Battle battle;
+        Battle battle(logger);
         battle.fight(*player, *enemy);
 
 
-        std::cout <<'\n';
+        logger.logf('\n');
         if (player->isAlive())
         {
-                std::cout << player->getName() << " won";
+                logger.logf(player->getName(), " won");
         }
         else
         {
-                std::cout << enemy->getName() << " won";
+                logger.logf(enemy->getName(), " won");
         }
 }
